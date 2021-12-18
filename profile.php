@@ -2,27 +2,22 @@
     include_once "includes/header.php"; 
     if(!isset($_SESSION['user']['id'])) header('Location: /');
 
-	//$links = get_user_links($_SESSION['user']['id']);
 
-	$error = '';
-	if (isset($_SESSION['error']) && !empty($_SESSION['error'])) {
-		$error = $_SESSION['error'];
-		$_SESSION['error'] = '';
-    }
-    $success = '';
-	if (isset($_SESSION['success']) && !empty($_SESSION['success'])) {
-		$success = $_SESSION['success'];
-		$_SESSION['success'] = '';
-	}
+	// $error = '';
+	// if (isset($_SESSION['error']) && !empty($_SESSION['error'])) {
+	// 	$error = $_SESSION['error'];
+	// 	$_SESSION['error'] = '';
+    // }
+    // $success = '';
+	// if (isset($_SESSION['success']) && !empty($_SESSION['success'])) {
+	// 	$success = $_SESSION['success'];
+	// 	$_SESSION['success'] = '';
+	// }
+
     //var_dump($name);
 ?>
 
 <body>
-
-<div class="container" style="width: 1320px;">
-    
-<h3 class="employee-add">Добавление нового сотрудника</h3>
-
 
 <!-- 1020 1028 1140 -->
 <?php
@@ -31,19 +26,13 @@
 // echo 'console.log('. json_encode( $_POST ) .')';
 ?> 
 
-<!-- <div class="scroling-employees">
-<div style="border: 1px solid #C1C1C1; padding: 10px; height: 530px; overflow-y: hidden; overflow-x: scroll; width: 1140px;"> 
-<div style="width: 1520px;"> -->
+<div class="container" style="width: 1320px;"> 
+<h3 class="employee-add">Добавление нового сотрудника</h3>
 
 <form class="d-flex" action = "includes/add.php" method = "post">
-
     <table class="table">
         <thead>
             <tr>
-                <!-- <th>ФИО | Дата рождения </th>
-                <th> Паспорт | ИНН</th>
-                <th>Адрес | Телефон</th>
-                <th>E-mail | Добавление</th> -->
                 <th>ФИО</th>
                 <th>Дата рождения</th>
                 <th>Паспорт</th>
@@ -55,7 +44,7 @@
             </tr>
         </thead>
             <tr>
-	            <td><input class="form-control me-2" type ="text" placeholder = "ФИО" aria-label = "ФИО" name = "name"></td>
+                <td><input class="form-control me-2" type ="text" placeholder = "ФИО" aria-label = "ФИО" name = "name"></td>
                 <td><input class="form-control me-2" type ="text" placeholder = "хх.хх.хххх" aria-label = "Дата рождения" name = "date"></td>
                 <td><input class="form-control me-2" type ="text" placeholder = "хххх хххххх" aria-label = "Паспорт" name = "pasport"></td>
                 <td><input class="form-control me-2" type ="text" placeholder = "хххххххххххх" aria-label = "ИНН" name = "inn"></td>
@@ -64,34 +53,8 @@
                 <td><input class="form-control me-2" type ="text" placeholder = "E-mail" aria-label = "E-mail" name = "email"></td>
                 <td><input class="btn btn-outline-primary" type="submit"></input></td>
             </tr>
-
-
-            <!-- <tr>
-        <thead>
-            <tr>
-                <th>Дата рождения</th>
-                <th>ИНН</th>
-                <th>Телефон</th>
-                <th>Добавление</th>
-            </tr>
-        </thead>
-            </tr> -->
-        
-            <!-- <tr>               
-                
-                <td><input class="form-control me-2" type ="text" placeholder = "хх.хх.хххх" aria-label = "Дата рождения" name = "date"></td>
-                <td><input class="form-control me-2" type ="text" placeholder = "хххххххххххх" aria-label = "ИНН" name = "inn"></td>
-                <td><input class="form-control me-2" type ="text" placeholder = "8 (ххх) ххх-хххх" aria-label = "Телефон" name = "phone"></td>
-	            <td><input class="btn btn-outline-primary" type="submit"></input></td>
-            </tr> -->
     </table>
-
 </form>
-
-<!-- </div>
-</div>
-</div> -->
-<!-- /.scroling-employees -->
 
 
 <script>
@@ -142,8 +105,8 @@
         return regex.test(email);
     }
 </script>
-<?php
 
+<?php
 $link = mysqli_connect(
     'localhost',
     'root',

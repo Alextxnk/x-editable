@@ -1,9 +1,5 @@
 <?php 
 	include_once "includes/functions.php";
-
-	//$users_count = get_users_count();
-	//$links_count = get_links_count();
-	//$views_count = get_views_count();
 ?>
 <!doctype html>
 <html lang="ru">
